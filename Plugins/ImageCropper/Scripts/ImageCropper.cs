@@ -449,6 +449,24 @@ public class ImageCropper : MonoBehaviour
 			return null;
 		}
 
+		// Make sure that cropped image dimensions do not exceed maximum supported texture size
+		int maxTextureSize = SystemInfo.maxTextureSize;
+		if( width > maxTextureSize || height > maxTextureSize )
+		{
+			int preferredWidth = (int) ( maxTextureSize * width / (float) height );
+			int preferredHeight = (int) ( maxTextureSize * height / (float) width );
+
+			if( preferredWidth <= maxTextureSize )
+				preferredHeight = maxTextureSize;
+			else
+				preferredWidth = maxTextureSize;
+
+			Debug.Log( string.Concat( width, "x", height, " is too large, using ", preferredWidth, "x", preferredHeight, " instead..." ) );
+
+			width = preferredWidth;
+			height = preferredHeight;
+		}
+
 		RectTransform cropRenderCanvasTR = (RectTransform) cropRenderCanvas.transform;
 		RectTransform cropRenderImageTR = (RectTransform) cropRenderImage.transform;
 		Transform cropRenderCameraTR = cropRenderCamera.transform;
@@ -474,39 +492,54 @@ public class ImageCropper : MonoBehaviour
 		cropRenderCamera.aspect = selectionSize.x / selectionSize.y;
 		cropRenderCamera.orthographicSize = selectionSize.y * 0.5f;
 
-		cropRenderCanvas.gameObject.SetActive( true );
-		LayoutRebuilder.ForceRebuildLayoutImmediate( cropRenderCanvasTR );
-
+		Texture2D result = null;
 		RenderTexture temp = RenderTexture.active;
 		RenderTexture renderTex = RenderTexture.GetTemporary( width, height, 24 );
-		RenderTexture.active = renderTex;
-
-		bool transparentBackground = ImageBackground.a < 1f;
-		if( transparentBackground )
+		try
 		{
-			cropRenderCamera.clearFlags = CameraClearFlags.Depth;
-			GL.Clear( false, true, ImageBackground );
+			cropRenderCanvas.gameObject.SetActive( true );
+			LayoutRebuilder.ForceRebuildLayoutImmediate( cropRenderCanvasTR );
+
+			RenderTexture.active = renderTex;
+
+			bool transparentBackground = ImageBackground.a < 1f;
+			if( transparentBackground )
+			{
+				cropRenderCamera.clearFlags = CameraClearFlags.Depth;
+				GL.Clear( false, true, ImageBackground );
+			}
+			else
+			{
+				cropRenderCamera.clearFlags = CameraClearFlags.Color;
+				cropRenderCamera.backgroundColor = ImageBackground;
+			}
+
+			cropRenderCamera.targetTexture = renderTex;
+			cropRenderCamera.Render();
+
+			result = new Texture2D( width, height, transparentBackground ? TextureFormat.RGBA32 : TextureFormat.RGB24, false );
+			result.ReadPixels( new Rect( 0, 0, width, height ), 0, 0, false );
+			result.Apply( false, MarkTextureNonReadable );
 		}
-		else
+		catch( System.Exception e )
 		{
-			cropRenderCamera.clearFlags = CameraClearFlags.Color;
-			cropRenderCamera.backgroundColor = ImageBackground;
+			Debug.LogException( e );
+
+			if( result != null )
+			{
+				DestroyImmediate( result );
+				result = null;
+			}
 		}
+		finally
+		{
+			RenderTexture.active = temp;
+			RenderTexture.ReleaseTemporary( renderTex );
 
-		cropRenderCamera.targetTexture = renderTex;
-		cropRenderCamera.Render();
-
-		cropRenderCamera.targetTexture = null;
-
-		Texture2D result = new Texture2D( width, height, transparentBackground ? TextureFormat.RGBA32 : TextureFormat.RGB24, false );
-		result.ReadPixels( new Rect( 0, 0, width, height ), 0, 0, false );
-		result.Apply( false, MarkTextureNonReadable );
-
-		RenderTexture.active = temp;
-		RenderTexture.ReleaseTemporary( renderTex );
-
-		cropRenderCanvas.gameObject.SetActive( false );
-		cropRenderImage.texture = null;
+			cropRenderCanvas.gameObject.SetActive( false );
+			cropRenderImage.texture = null;
+			cropRenderCamera.targetTexture = null;
+		}
 
 		return result;
 	}
