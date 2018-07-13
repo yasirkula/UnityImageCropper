@@ -49,7 +49,3 @@ ImageCropper is a singleton object that can be accessed via `ImageCropper.Instan
 ## D. EXAMPLE CODE
 
 See [ImageCropperDemo.cs](Plugins/ImageCropper/Demo/ImageCropperDemo.cs).
-
-## E. LICENSE
-
-This software is [licensed under the GNU General Public License v3.0](LICENSE). If instead you'd like to use it under [Asset Store EULA](https://unity3d.com/legal/as_terms), or to support my work, consider getting it from [Unity Asset Store](https://www.assetstore.unity3d.com/en/#!/content/116650). Thank you!
