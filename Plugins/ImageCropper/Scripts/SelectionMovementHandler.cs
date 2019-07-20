@@ -8,8 +8,10 @@ namespace ImageCropperNamespace
 	{
 		private const float SCROLL_DISTANCE = 5f;
 
+#pragma warning disable 0649
 		[SerializeField]
 		private ImageCropper manager;
+#pragma warning restore 0649
 
 		private RectTransform selection;
 

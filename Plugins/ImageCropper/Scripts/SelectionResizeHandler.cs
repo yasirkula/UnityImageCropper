@@ -9,6 +9,7 @@ namespace ImageCropperNamespace
 		private const float SCROLL_DISTANCE = 70f;
 		private const float SELECTION_MAX_DISTANCE_FOR_SCROLL = 50f;
 
+#pragma warning disable 0649
 		[SerializeField]
 		private ImageCropper manager;
 
@@ -17,6 +18,7 @@ namespace ImageCropperNamespace
 
 		[SerializeField]
 		private Direction secondaryDirection = Direction.None;
+#pragma warning restore 0649
 
 		private Direction directions;
 		private Direction pivot;

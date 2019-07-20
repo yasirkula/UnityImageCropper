@@ -4,6 +4,7 @@ namespace ImageCropperNamespace
 {
 	public class SelectionCornersFitter : MonoBehaviour
 	{
+#pragma warning disable 0649
 		[SerializeField]
 		private RectTransform selection;
 
@@ -24,9 +25,10 @@ namespace ImageCropperNamespace
 
 		[SerializeField]
 		private float cornerSizeMaxRatio = 0.3f;
+#pragma warning restore 0649
 
 		private Vector2 inset;
-		
+
 		private void OnEnable()
 		{
 			inset = ( (RectTransform) transform ).sizeDelta * 0.5f;
@@ -46,7 +48,7 @@ namespace ImageCropperNamespace
 				cornerSize = Vector2.one * Mathf.Min( maxCornerSize.x, maxCornerSize.y );
 
 			float halfCornerSize = cornerSize.x * 0.5f;
-			
+
 			bottomLeft.anchoredPosition = new Vector2( halfCornerSize, halfCornerSize );
 			bottomLeft.sizeDelta = cornerSize;
 

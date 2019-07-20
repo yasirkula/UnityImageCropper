@@ -62,6 +62,7 @@ public class ImageCropper : MonoBehaviour
 		}
 	}
 
+#pragma warning disable 0649
 	[Header( "Properties" )]
 	[SerializeField]
 	private float autoZoomInThreshold = 0.5f;
@@ -146,6 +147,7 @@ public class ImageCropper : MonoBehaviour
 
 	[SerializeField]
 	private Camera cropRenderCamera;
+#pragma warning restore 0649
 
 	public bool IsOpen { get { return gameObject.activeSelf; } }
 

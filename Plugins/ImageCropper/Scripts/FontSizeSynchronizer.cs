@@ -6,8 +6,10 @@ namespace ImageCropperNamespace
 	[SerializeField]
 	public class FontSizeSynchronizer : MonoBehaviour
 	{
+#pragma warning disable 0649
 		[SerializeField]
 		private Text[] texts;
+#pragma warning restore 0649
 
 		private int[] initialBestFitSizes;
 		private Canvas canvas;
