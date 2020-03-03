@@ -1,7 +1,8 @@
 # Unity Image Cropper
+
 ![screenshot](Images/cropper.png)
 
-**Available on Asset Store:** https://www.assetstore.unity3d.com/en/#!/content/116650
+**Available on Asset Store:** https://assetstore.unity.com/packages/tools/gui/image-cropper-116650
 
 **Forum Thread:** https://forum.unity.com/threads/released-image-cropper-multiplatform-image-cropping-solution-with-oval-mask-support.526901/
 
@@ -19,6 +20,8 @@ ImageCropper aims to be a powerful, customizable and easy-to-use image cropping 
 - Can work on pretty much any screen resolution/orientation
 
 ## C. HOW TO
+
+After importing [ImageCropper.unitypackage](https://github.com/yasirkula/UnityImageCropper/releases) to your project, you are good to go!
 
 ImageCropper is a singleton object that can be accessed via `ImageCropper.Instance`. To start cropping a *Texture* object, you can call the following function:
 
