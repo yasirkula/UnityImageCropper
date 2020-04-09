@@ -8,6 +8,8 @@
 
 **WebGL Demo:** http://yasirkula.net/ImageCropperDemo/
 
+**[Support the Developer ☕](https://yasirkula.itch.io/unity3d)**
+
 ## A. ABOUT
 
 ImageCropper aims to be a powerful, customizable and easy-to-use image cropping solution for Unity 3D. It is created with Unity's UI system.
