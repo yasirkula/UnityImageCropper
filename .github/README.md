@@ -10,20 +10,28 @@
 
 **[Support the Developer ☕](https://yasirkula.itch.io/unity3d)**
 
-## A. ABOUT
+## ABOUT
 
 ImageCropper aims to be a powerful, customizable and easy-to-use image cropping solution for Unity 3D. It is created with Unity's UI system.
 
-## B. FEATURES
+## FEATURES
 
 - Supports rectangular and oval cropping modes
 - Supports auto-zoom feature for fine-tuning the selection
 - Costs 1 SetPass call and 6 batches (assuming that *Sprite Packing* is enabled in *Editor Settings*)
 - Can work on pretty much any screen resolution/orientation
 
-## C. HOW TO
+## INSTALLATION
 
-After importing [ImageCropper.unitypackage](https://github.com/yasirkula/UnityImageCropper/releases) to your project, you are good to go!
+There are 4 ways to install this plugin:
+
+- import [ImageCropper.unitypackage](https://github.com/yasirkula/UnityImageCropper/releases) via *Assets-Import Package*
+- clone/[download](https://github.com/yasirkula/UnityImageCropper/archive/master.zip) this repository and move the *Plugins* folder to your Unity project's *Assets* folder
+- import it from [Asset Store](https://assetstore.unity.com/packages/tools/gui/image-cropper-116650)
+- *(via Package Manager)* add the following line to *Packages/manifest.json*:
+  - `"com.yasirkula.imagecropper": "https://github.com/yasirkula/UnityImageCropper.git",`
+
+## HOW TO
 
 ImageCropper is a singleton object that can be accessed via `ImageCropper.Instance`. To start cropping a *Texture* object, you can call the following function:
 
@@ -51,6 +59,6 @@ ImageCropper is a singleton object that can be accessed via `ImageCropper.Instan
 
 **NOTE:** before calling the *Show* function, you may want to check the value of `ImageCropper.Instance.IsOpen` to make sure that the image cropper is not already visible.
 
-## D. EXAMPLE CODE
+## EXAMPLE CODE
 
 See [ImageCropperDemo.cs](Plugins/ImageCropper/Demo/ImageCropperDemo.cs).
