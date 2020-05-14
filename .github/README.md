@@ -23,13 +23,15 @@ ImageCropper aims to be a powerful, customizable and easy-to-use image cropping 
 
 ## INSTALLATION
 
-There are 4 ways to install this plugin:
+There are 5 ways to install this plugin:
 
 - import [ImageCropper.unitypackage](https://github.com/yasirkula/UnityImageCropper/releases) via *Assets-Import Package*
 - clone/[download](https://github.com/yasirkula/UnityImageCropper/archive/master.zip) this repository and move the *Plugins* folder to your Unity project's *Assets* folder
 - import it from [Asset Store](https://assetstore.unity.com/packages/tools/gui/image-cropper-116650)
 - *(via Package Manager)* add the following line to *Packages/manifest.json*:
   - `"com.yasirkula.imagecropper": "https://github.com/yasirkula/UnityImageCropper.git",`
+- *(via [OpenUPM](https://openupm.com))* after installing [openupm-cli](https://github.com/openupm/openupm-cli), run the following command:
+  - `openupm add com.yasirkula.imagecropper`
 
 ## HOW TO
 
