@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace ImageCropperNamespace
 {
+	[RequireComponent( typeof( CanvasRenderer ) )]
 	public class CircleGraphic : MaskableGraphic
 	{
 		public enum Mode { FillInside = 0, FillOutside = 1, Edge = 2 };

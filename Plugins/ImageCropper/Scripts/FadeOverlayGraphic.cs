@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace ImageCropperNamespace
 {
+	[RequireComponent( typeof( CanvasRenderer ) )]
 	public class FadeOverlayGraphic : Graphic
 	{
 		private const float OFFSET = 20000f;
