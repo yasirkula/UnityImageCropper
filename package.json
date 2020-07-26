@@ -1,7 +1,7 @@
 {
   "name": "com.yasirkula.imagecropper",
   "displayName": "Image Cropper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ImageCropper aims to be a powerful, customizable and easy-to-use image cropping solution for Unity 3D. It is created with Unity's UI system.",
   "hideInEditor": false
 }
