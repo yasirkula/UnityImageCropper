@@ -63,4 +63,4 @@ ImageCropper is a singleton object that can be accessed via `ImageCropper.Instan
 
 ## EXAMPLE CODE
 
-See [ImageCropperDemo.cs](Plugins/ImageCropper/Demo/ImageCropperDemo.cs).
+See [ImageCropperDemo.cs](../Plugins/ImageCropper/Demo/ImageCropperDemo.cs).
