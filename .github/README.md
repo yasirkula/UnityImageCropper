@@ -6,6 +6,8 @@
 
 **Forum Thread:** https://forum.unity.com/threads/released-image-cropper-multiplatform-image-cropping-solution-with-oval-mask-support.526901/
 
+**Discord:** https://discord.gg/UJJt549AaV
+
 **WebGL Demo:** http://yasirkula.net/ImageCropperDemo/
 
 **[Support the Developer ☕](https://yasirkula.itch.io/unity3d)**
