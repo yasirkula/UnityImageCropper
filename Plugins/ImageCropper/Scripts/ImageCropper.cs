@@ -511,11 +511,9 @@ public class ImageCropper : MonoBehaviour
 				GL.Clear( false, true, ImageBackground );
 			}
 			else
-			{
 				cropRenderCamera.clearFlags = CameraClearFlags.Color;
-				cropRenderCamera.backgroundColor = ImageBackground;
-			}
 
+			cropRenderCamera.backgroundColor = ImageBackground;
 			cropRenderCamera.targetTexture = renderTex;
 			cropRenderCamera.Render();
 
