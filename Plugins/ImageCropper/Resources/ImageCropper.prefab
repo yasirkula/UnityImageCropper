@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 114447286773665142}
   - component: {fileID: 114788079095688046}
   - component: {fileID: 114323362291179536}
+  - component: {fileID: 114327519071772764}
   m_Layer: 0
   m_Name: ImageCropper
   m_TagString: Untagged
@@ -638,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1718562304412798
 GameObject:
   m_ObjectHideFlags: 1
@@ -1341,6 +1342,18 @@ MonoBehaviour:
   detail: 84
   mode: 0
   edgeThickness: 1
+--- !u!114 &114327519071772764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448628512259654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a39d7b3bb056d340842cf64a2bdf500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  embeddedEventSystem: {fileID: 1713518909072214}
 --- !u!114 &114346701098374660
 MonoBehaviour:
   m_ObjectHideFlags: 1
