@@ -61,7 +61,9 @@ ImageCropper is a singleton object that can be accessed via `ImageCropper.Instan
   - **float selectionInitialPaddingRight** (*default=0.1*): initial padding-right of the selection in %
   - **float selectionInitialPaddingBottom** (*default=0.1*): initial padding-bottom of the selection in %
 
-**NOTE:** before calling the *Show* function, you may want to check the value of `ImageCropper.Instance.IsOpen` to make sure that the image cropper is not already visible.
+**NOTE:** Before calling the *Show* function, you may want to check the value of `ImageCropper.Instance.IsOpen` to make sure that the image cropper is not already visible.
+
+**NOTE:** Crop camera uses [Layer 22](https://github.com/yasirkula/UnityImageCropper/blob/14d84a729623ad980c966221a65f2cc4d7bfd496/Plugins/ImageCropper/Scripts/ImageCropper.cs#L262-L264) to render the thumbnails. On URP, make sure that that layer is included in the Layer Masks of the Forward Renderer asset.
 
 ## EXAMPLE CODE
 
