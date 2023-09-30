@@ -35,6 +35,16 @@ There are 5 ways to install this plugin:
 - *(via [OpenUPM](https://openupm.com))* after installing [openupm-cli](https://github.com/openupm/openupm-cli), run the following command:
   - `openupm add com.yasirkula.imagecropper`
 
+## FAQ
+
+- **New Input System isn't supported on Unity 2019.2.5 or earlier**
+
+Add `ENABLE_INPUT_SYSTEM` compiler directive to **Player Settings/Scripting Define Symbols** (these symbols are platform specific, so if you change the active platform later, you'll have to add the compiler directive again).
+
+- **"Unity.InputSystem" assembly can't be resolved on Unity 2018.4 or earlier**
+
+Remove `Unity.InputSystem` assembly from **ImageCropper.Runtime** Assembly Definition File's *Assembly Definition References* list.
+
 ## HOW TO
 
 ImageCropper is a singleton object that can be accessed via `ImageCropper.Instance`. To start cropping a *Texture* object, you can call the following function:
