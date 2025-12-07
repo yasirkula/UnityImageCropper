@@ -4,7 +4,6 @@ namespace ImageCropperNamespace
 {
 	public class SelectionCornersFitter : MonoBehaviour
 	{
-#pragma warning disable 0649
 		[SerializeField]
 		private RectTransform selection;
 
@@ -25,7 +24,6 @@ namespace ImageCropperNamespace
 
 		[SerializeField]
 		private float cornerSizeMaxRatio = 0.3f;
-#pragma warning restore 0649
 
 		private Vector2 inset;
 

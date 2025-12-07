@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-#if UNITY_EDITOR && UNITY_2021_1_OR_NEWER
+#if UNITY_EDITOR
 using Screen = UnityEngine.Device.Screen; // To support Device Simulator on Unity 2021.1+
 #endif
 
@@ -9,7 +9,6 @@ namespace ImageCropperNamespace
 	public class NotchCompensator : MonoBehaviour
 	{
 #if UNITY_EDITOR || UNITY_ANDROID || UNITY_IOS
-#pragma warning disable 0649
 		[SerializeField]
 		[Tooltip( "If enabled, on Android and iOS devices with notch screens, top buttons will be repositioned so that the cutout(s) don't obscure them" )]
 		private bool avoidScreenCutout = true;
@@ -20,11 +19,8 @@ namespace ImageCropperNamespace
 		private RectTransform viewport;
 		[SerializeField]
 		private Image notchBackground;
-#pragma warning restore 0649
 
-#pragma warning disable 0414
 		private RectTransform canvasTR;
-#pragma warning restore 0414
 
 		private bool screenDimensionsChanged = true;
 
@@ -54,7 +50,6 @@ namespace ImageCropperNamespace
 			if( !avoidScreenCutout )
 				return;
 
-#if UNITY_2017_2_OR_NEWER && ( UNITY_EDITOR || UNITY_ANDROID || UNITY_IOS )
 			// Check if there is a cutout at the top of the screen
 			int screenHeight = Screen.height;
 			float safeYMax = Screen.safeArea.yMax;
@@ -79,7 +74,6 @@ namespace ImageCropperNamespace
 				if( notchBackground.enabled )
 					notchBackground.enabled = false;
 			}
-#endif
 		}
 #endif
 	}

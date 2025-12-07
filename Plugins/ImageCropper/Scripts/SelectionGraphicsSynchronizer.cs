@@ -4,7 +4,6 @@ namespace ImageCropperNamespace
 {
 	public class SelectionGraphicsSynchronizer : MonoBehaviour
 	{
-#pragma warning disable 0649
 		[SerializeField]
 		private ImageCropper manager;
 
@@ -13,7 +12,6 @@ namespace ImageCropperNamespace
 
 		[SerializeField]
 		private RectTransform selectionTopRight;
-#pragma warning restore 0649
 
 		private RectTransform viewport;
 		private RectTransform selectionGraphics;

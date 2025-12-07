@@ -8,10 +8,8 @@ namespace ImageCropperNamespace
 	{
 		private const float OFFSET = 20000f;
 
-#pragma warning disable 0649
 		[SerializeField]
 		private Sprite renderSprite;
-#pragma warning restore 0649
 
 		private Vector2 uv = Vector2.zero;
 		private Color32 color32;

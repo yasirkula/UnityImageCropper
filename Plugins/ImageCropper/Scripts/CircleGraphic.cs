@@ -8,8 +8,6 @@ namespace ImageCropperNamespace
 	{
 		public enum Mode { FillInside = 0, FillOutside = 1, Edge = 2 };
 
-#pragma warning disable 0649
-		[Header( "-> The Real Deal <- <- <-" )]
 		[SerializeField]
 		private Sprite renderSprite;
 
@@ -21,7 +19,6 @@ namespace ImageCropperNamespace
 
 		[SerializeField]
 		private float edgeThickness = 1;
-#pragma warning restore 0649
 
 		private Vector2 uv;
 		private Color32 color32;

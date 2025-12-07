@@ -1,4 +1,4 @@
-= Image Cropper (v1.0.7) =
+= Image Cropper (v1.0.8) =
 
 Documentation: https://github.com/yasirkula/UnityImageCropper
 FAQ: https://github.com/yasirkula/UnityImageCropper#faq

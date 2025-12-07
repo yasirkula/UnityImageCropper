@@ -11,10 +11,8 @@ namespace ImageCropperNamespace
 	[DefaultExecutionOrder( 1000 )]
 	public class EventSystemHandler : MonoBehaviour
 	{
-#pragma warning disable 0649
 		[SerializeField]
 		private GameObject embeddedEventSystem;
-#pragma warning restore 0649
 
 #if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 		private void Awake()
@@ -48,9 +46,7 @@ namespace ImageCropperNamespace
 
 		private void OnSceneLoaded( Scene scene, LoadSceneMode mode )
 		{
-#if UNITY_2017_2_OR_NEWER
 			DeactivateEventSystem();
-#endif
 			ActivateEventSystemIfNeeded();
 		}
 
